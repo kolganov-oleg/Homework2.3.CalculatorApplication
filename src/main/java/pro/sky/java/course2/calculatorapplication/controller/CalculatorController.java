@@ -19,29 +19,29 @@ public class CalculatorController {
     }
 
     @GetMapping("/plus")
-    public String plus(@RequestParam(name = "num1", required = false) Integer a, @RequestParam(name = "num2", required = false) Integer b) {
+    public String plus(@RequestParam(name = "num1", required = false) Double a, @RequestParam(name = "num2", required = false) Double b) {
         if (a==null || b==null) return "Пустое поле запроса";
-        int plus = calculatorService.plus(a, b);
+        double plus = calculatorService.plus(a, b);
         return a + " + " + b + " = " + plus;
     }
 
     @GetMapping("/minus")
-    public String minus(@RequestParam(name = "num1", required = false) Integer a, @RequestParam(name = "num2", required = false) Integer b) {
+    public String minus(@RequestParam(name = "num1", required = false) Double a, @RequestParam(name = "num2", required = false) Double b) {
         if (a==null || b==null) return "Пустое поле запроса";
-        int minus = calculatorService.minus(a, b);
+        double minus = calculatorService.minus(a, b);
         return a + " - " + b + " = " + minus;
     }
 
     @GetMapping("/multiple")
-    public String multiple(@RequestParam(name = "num1", required = false) Integer a, @RequestParam(name = "num2", required = false) Integer b) {
+    public String multiple(@RequestParam(name = "num1", required = false) Double a, @RequestParam(name = "num2", required = false) Double b) {
         if (a==null || b==null) return "Пустое поле запроса";
-        int multiple = calculatorService.multiple(a, b);
+        double multiple = calculatorService.multiple(a, b);
         return a + " * " + b + " = " + multiple;
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam(name = "num1", required = false) Integer a, @RequestParam(name = "num2", required = false) Integer b) {
-        if (a==null || b==null) return "Пустое поле запроса";
+    public String divide(@RequestParam(name = "num1", required = false) Double a, @RequestParam(name = "num2", required = false) Double b) {
+
         double divide;
         try {
          divide = calculatorService.divide(a, b);
